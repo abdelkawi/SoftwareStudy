@@ -8,7 +8,7 @@
 		myLinkedList.push_back(value);
 	}
 	int Queue::dequeue(){
-		return myLinkedList.pop_back();
+		return myLinkedList.pop_front();
 	}
 	void Queue::print(){
 		myLinkedList.print();
