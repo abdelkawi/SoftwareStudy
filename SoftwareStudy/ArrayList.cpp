@@ -1,3 +1,5 @@
+using namespace std;
+#include <iostream>
 class MyVectorClass
 {
 	int *arr;	  // define a pointer

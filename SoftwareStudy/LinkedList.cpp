@@ -1,27 +1,21 @@
 #include <iostream>
+#include "LinkedList.h"
 using namespace std;
 
-struct Node
-{
-    int data;
-    Node *next;
-};
 
-class MyLinkedList{
-    Node *head,*tail;
-	int listSize;
-    public:
-     MyLinkedList(){
+
+
+    MyLinkedList:: MyLinkedList(){
         head =NULL;
         tail =NULL;
 		listSize= 0;
     }
 
-	 int size(){
+	 int MyLinkedList::size(){
 		 return listSize ;
 	 }
 
-    void push_back(int data){
+    void MyLinkedList::push_back(int data){
          Node * temp = new Node;
             temp->data = data;
             temp->next =NULL;
@@ -35,7 +29,7 @@ class MyLinkedList{
         }
     }
      
-	void push_front(int data){
+	void MyLinkedList::push_front(int data){
          Node * temp = new Node;
             temp->data = data;
             temp->next = head;
@@ -47,7 +41,7 @@ class MyLinkedList{
             head = temp;
         }
     }
-	  int value_at(int index){
+	  int MyLinkedList::value_at(int index){
 		  Node *temp = new Node;
 		  temp->data = head->data;
 		  temp->next =head->next;
@@ -59,14 +53,14 @@ class MyLinkedList{
 		  }
 		  return temp->data;
 	  }
-	  int pop_front(){
+	  int MyLinkedList::pop_front(){
 		  int data = head->data;
 		  Node * temp = head;
 		  head = head->next;
 		  delete temp ;
 		  return data;
 	  }
-	  int pop_back(){
+	  int MyLinkedList::pop_back(){
 		  int data =  tail->data;
 		  Node *current = head;
 		
@@ -78,7 +72,7 @@ class MyLinkedList{
 		  return data;
 	  }
 
-	  void reverseList(){
+	  void MyLinkedList::reverseList(){
 	  Node * prev = NULL;
 	  Node *current = head;
 	  Node * next = NULL;
@@ -92,7 +86,7 @@ class MyLinkedList{
 	  head = prev;
 	  }
 
-    void print(){
+    void MyLinkedList:: print(){
          Node *current = head;
         do 
         {
@@ -100,5 +94,4 @@ class MyLinkedList{
            current =current->next;
         }while(current!=NULL);
     }
-};
 
